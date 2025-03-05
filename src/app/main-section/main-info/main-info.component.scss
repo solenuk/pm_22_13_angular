@@ -1,0 +1,42 @@
+.my-text {
+  h1 {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    margin-top: 50px;
+  }
+
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    padding: 15px 0 15px 0.2em;
+  }
+}
+
+.main-section-margin {
+  h1 {
+    margin-left: .8em;
+  }
+
+  p {
+    margin-left: 1.2em;
+  }
+}
+
+.content {
+  display: block;
+}
+
+.reference-vertical-line::before {
+  content: "";
+  width: 1px;
+  border-left: 4px solid gray;
+  position: absolute;
+  z-index: -2;
+  top: 10%;
+  bottom: 25%;
+  left: 0;
+}
+
+.relative {
+  position: relative;
+}

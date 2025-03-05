@@ -1,0 +1,44 @@
+<div class="my-text main-section-margin">
+  <ng-container *ngFor="let item of mainInfo">
+    <h1 class="section-title"><b>{{ item.name }}</b></h1>
+    <div class="content" *ngIf="item.name === 'PROFILE'; else checkIfExperience">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Aliquid doloribus dolorum eos harum mollitia necessitatibus ut veniam!
+        Accusamus aperiam architecto asperiores autem delectus, dolore
+        dolorem doloremque dolores doloribus eius exercitationem fugiat id, iure libero
+        magni minima modi mollitia natus necessitatibus neque nihil perspiciatis
+        possimus quaerat ratione, saepe sequi suscipit ut?</p>
+    </div>
+    <div class="content">
+      <ng-template #checkIfExperience>
+        <ng-container *ngIf="item.name === 'EXPERIENCE'; else checkIfReference">
+          <p>Senior UX Designer - Present<br>
+            Company Name / Location<br>
+            <span class="text-black-50"> Lorem Ipsum is simply dummy text
+                    of the printing and typesetting<br> industry. Lorem Ipsum has been the</span>
+          </p>
+          <p>UX Designer - 2016<br>
+            Company Name / Location<br>
+            <span class="text-black-50"> Lorem Ipsum is simply dummy text
+                    of the printing and typesetting <br> industry. Lorem Ipsum has been the</span></p>
+        </ng-container>
+      </ng-template>
+      <ng-template #checkIfReference>
+        <ng-container *ngIf="item.name === 'REFERENCE'">
+          <div class="row">
+            <div class="col-md-6">
+              <p><span class="text-black-50">Senior Designer</span><br>
+                <b>John Ander Smith</b> <br>
+                Company name here</p>
+            </div>
+            <div class="col-md-6 relative reference-vertical-line">
+              <p><span class="text-black-50">Senior Designer</span><br>
+                <b>John Smith</b> <br>
+                Company name here</p>
+            </div>
+          </div>
+        </ng-container>
+      </ng-template>
+    </div>
+  </ng-container>
+</div>

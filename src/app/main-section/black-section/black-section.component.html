@@ -1,0 +1,8 @@
+<div class="black-section">
+  <div class="row black-section-text my-2">
+    <div [class]="'col-md-3 ' + (item.name === 'Phone' ? 'mx-3': 'mx-5')" *ngFor="let item of dataToDisplay">
+      <h5 class="section-title"><b>{{item.name}}</b></h5>
+      <p>{{item.data}}</p>
+    </div>
+  </div>
+</div>
