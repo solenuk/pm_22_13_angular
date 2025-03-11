@@ -12,5 +12,5 @@ import {NgFor, NgIf} from '@angular/common';
   styleUrl: './main-info.component.scss'
 })
 export class MainInfoComponent {
-  @Input() mainInfo!: { name: string }[];
+  @Input() mainInfo!: string[];
 }

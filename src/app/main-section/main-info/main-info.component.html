@@ -1,7 +1,7 @@
 <div class="my-text main-section-margin">
   <ng-container *ngFor="let item of mainInfo">
-    <h1 class="section-title"><b>{{ item.name }}</b></h1>
-    <div class="content" *ngIf="item.name === 'PROFILE'; else checkIfExperience">
+    <h1 class="section-title"><b>{{ item }}</b></h1>
+    <div class="content" *ngIf="item === 'PROFILE'; else checkIfExperience">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Aliquid doloribus dolorum eos harum mollitia necessitatibus ut veniam!
         Accusamus aperiam architecto asperiores autem delectus, dolore
@@ -11,7 +11,7 @@
     </div>
     <div class="content">
       <ng-template #checkIfExperience>
-        <ng-container *ngIf="item.name === 'EXPERIENCE'; else checkIfReference">
+        <ng-container *ngIf="item === 'EXPERIENCE'; else checkIfReference">
           <p>Senior UX Designer - Present<br>
             Company Name / Location<br>
             <span class="text-black-50"> Lorem Ipsum is simply dummy text
@@ -24,7 +24,7 @@
         </ng-container>
       </ng-template>
       <ng-template #checkIfReference>
-        <ng-container *ngIf="item.name === 'REFERENCE'">
+        <ng-container *ngIf="item === 'REFERENCE'">
           <div class="row">
             <div class="col-md-6">
               <p><span class="text-black-50">Senior Designer</span><br>
