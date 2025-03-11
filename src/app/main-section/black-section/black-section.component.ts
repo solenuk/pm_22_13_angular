@@ -1,15 +1,26 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgFor} from '@angular/common';
+import {blackSection} from '../../types';
+import {FormsModule, NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-black-section',
   standalone: true,
   templateUrl: './black-section.component.html',
   imports: [
-    NgFor
+    NgFor,
+    FormsModule
   ],
   styleUrl: './black-section.component.scss'
 })
+
 export class BlackSectionComponent {
-  @Input() dataToDisplay!: { name: string, data: string }[];
+  @Input() dataToDisplay!: blackSection[];
+  @Input() isConnected: boolean = false;
+  @Output() dataUpdate = new EventEmitter<blackSection[]>();
+  isShown: boolean = false;
+
+  onSubmit(form: NgForm) {
+    this.dataUpdate.emit(form.value as blackSection[])
+  }
 }

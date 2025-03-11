@@ -1,2 +1,4 @@
-<app-black-section [dataToDisplay]="blackSectionData"></app-black-section>
+<app-black-section [dataToDisplay]="blackSectionData"
+                   [isConnected]="isConnected"
+                   (dataUpdate)="updateBlackSection($event)"></app-black-section>
 <app-main-info [mainInfo]="mainInfoData"></app-main-info>
