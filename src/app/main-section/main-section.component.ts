@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BlackSectionComponent} from './black-section/black-section.component';
 import {MainInfoComponent} from './main-info/main-info.component';
 import {blackSection} from '../types';
-import {ApiService} from '../api.service';
+import {ApiService} from '../service/api.service';
 
 @Component({
   selector: 'app-main-section',

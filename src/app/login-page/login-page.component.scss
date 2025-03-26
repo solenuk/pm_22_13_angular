@@ -1,0 +1,31 @@
+.container-fluid{
+  display: grid;
+  justify-content: center;
+  position: absolute;
+  top: 25%;
+
+  form{
+    display: block;
+    min-width: 20vw;
+  }
+
+  small{
+    display: block;
+    word-wrap: break-word;
+    max-width: 20vw;
+  }
+
+  h1{
+    text-align: center;
+  }
+}
+
+.submit{
+  margin-top: 1vh;
+}
+
+
+
+.error{
+  color: red;
+}

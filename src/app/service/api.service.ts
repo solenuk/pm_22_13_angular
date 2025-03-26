@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { blackSection } from './types';
+import {blackSection, ServerResponse, User} from '../types';
 import {firstValueFrom, timeout} from 'rxjs';
 
 @Injectable({
@@ -33,6 +33,30 @@ export class ApiService {
       }catch (error: any){
         throw new Error(error.message);
       }
+    }
+  }
+
+  async register(user: User): Promise<ServerResponse>{
+    try {
+      await firstValueFrom(this.http.post(`${this.API_URL}/register`, user));
+      return {status: 200, message: ''};
+    }catch (error: any){
+      if(error.status === 400){
+        return {status: 400, message: error.error.message};
+      }
+      throw new Error(error);
+    }
+  }
+
+  async login(user: User): Promise<ServerResponse>{
+    try {
+      const response: User = await firstValueFrom(this.http.post(`${this.API_URL}/login`, user)) as User;
+      return {status: 200, message: '', user: response};
+    }catch (error: any){
+      if(error.status === 401){
+        return {status: 401, message: error.error.message};
+      }
+      throw new Error(error);
     }
   }
 }
